@@ -39,4 +39,6 @@
 
 - (void)removeAllSubviews;
 
+- (void)cornerWithRadius:(CGFloat)radius;
+
 @end

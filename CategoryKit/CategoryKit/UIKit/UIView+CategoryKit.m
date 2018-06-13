@@ -221,6 +221,14 @@
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
-
+- (void)cornerWithRadius:(CGFloat)radius {
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = bezierPath.CGPath;
+    
+    self.layer.mask = shapeLayer;
+}
 
 @end
